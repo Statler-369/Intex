@@ -1,0 +1,73 @@
+﻿@model IEnumerable<NorthwestOrderSystem.Models.OrderDetails>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompoundSequenceNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateArrived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Appearance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MolecularMass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientEstimatedWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxToleratedDose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScheduledTestDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompoundSequenceNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateArrived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Appearance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MolecularMass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientEstimatedWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxToleratedDose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScheduledTestDate)
+        </td>
+    </tr>
+}
+
+</table>
