@@ -20,6 +20,7 @@ namespace NorthwestOrderSystem.Models
 
         [Key, Column(Order = 3)]
         [Required]
+        [Display(Name ="Compound Sequence Number")]
         public int CompoundSequenceNumber { get; set; }
         
         [Required]

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NorthwestOrderSystem.Models.SalesOrder>
+﻿@model IEnumerable<NorthwestOrderSystem.Models.OrderHistory>
 
 @{
     ViewBag.Title = "Index";
@@ -9,25 +9,25 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.OrderStatusID)
+            @Html.DisplayNameFor(model => model.orderStatus)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CompanyID)
+            @Html.DisplayNameFor(model => model.salesOrder.CompanyID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderComments)
+            @Html.DisplayNameFor(model => model.salesOrder.OrderComments)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Expedite)
+            @Html.DisplayNameFor(model => model.salesOrder.Expedite)
         </th>
         <th>
-            $@Html.DisplayNameFor(model => model.TotalPrice)
+            $@Html.DisplayNameFor(model => model.salesOrder.TotalPrice)
         </th>
         <th>
-            $@Html.DisplayNameFor(model => model.QuotedPrice)
+            $@Html.DisplayNameFor(model => model.salesOrder.QuotedPrice)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderDueDate)
+            @Html.DisplayNameFor(model => model.salesOrder.OrderDueDate)
         </th>
         <th></th>
     </tr>
@@ -35,28 +35,28 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.OrderStatusID)
+            @Html.DisplayFor(modelItem => item.orderStatus)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CompanyID)
+            @Html.DisplayFor(modelItem => item.salesOrder.CompanyID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.OrderComments)
+            @Html.DisplayFor(modelItem => item.salesOrder.OrderComments)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Expedite)
+            @Html.DisplayFor(modelItem => item.salesOrder.Expedite)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TotalPrice)
+            @Html.DisplayFor(modelItem => item.salesOrder.TotalPrice)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.QuotedPrice)
+            @Html.DisplayFor(modelItem => item.salesOrder.QuotedPrice)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.OrderDueDate)
+            @Html.DisplayFor(modelItem => item.salesOrder.OrderDueDate)
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { orderID=item.OrderID })
+            @Html.ActionLink("Details", "Details", new { orderID=item.salesOrder.OrderID })
         </td>
     </tr>
 }
