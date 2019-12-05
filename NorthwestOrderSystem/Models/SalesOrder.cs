@@ -39,5 +39,8 @@ namespace NorthwestOrderSystem.Models
 
         [Display(Name ="Due Date")]
         public DateTime OrderDueDate { get; set; }
+
+        [Display(Name = "Test Results")]
+        public string TestResults { get; set; }
     }
 }

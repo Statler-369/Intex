@@ -29,6 +29,9 @@
         <th>
             @Html.DisplayNameFor(model => model.salesOrder.OrderDueDate)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salesOrder.TestResults)
+        </th>
         <th></th>
     </tr>
 
@@ -56,7 +59,11 @@
             @Html.DisplayFor(modelItem => item.salesOrder.OrderDueDate)
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { orderID=item.salesOrder.OrderID })
+
+            <a href=@item.salesOrder.TestResults target="_blank">Results</a>
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { orderID = item.salesOrder.OrderID })
         </td>
     </tr>
 }

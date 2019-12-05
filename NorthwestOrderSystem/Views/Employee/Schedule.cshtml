@@ -1,0 +1,69 @@
+﻿@model IEnumerable<NorthwestOrderSystem.Models.TestSchedule>
+
+@{
+    ViewBag.Title = "Schedule";
+}
+
+<h2>Schedule</h2>
+
+<!--
+      public class TestSchedule
+    {
+        public OrderDetails orderDetails { get; set; }
+        public Assay assay { get; set; }
+    }
+-->
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.assay.AssayID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assay.ShortDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetails.CompoundSequenceNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetails.ActualWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetails.MolecularMass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetails.MaxToleratedDose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetails.ScheduledTestDate)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.assay.AssayID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.assay.ShortDesc)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.orderDetails.CompoundSequenceNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderDetails.ActualWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderDetails.MolecularMass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderDetails.MaxToleratedDose)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderDetails.ScheduledTestDate)
+            </td>
+        </tr>
+    }
+
+</table>

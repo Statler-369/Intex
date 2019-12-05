@@ -42,3 +42,17 @@ namespace NorthwestOrderSystem.Controllers
         }
     }
 }
+
+/*
+ System.Data.Entity.ModelConfiguration.ModelValidationException
+  HResult=0x80131500
+  Message=One or more validation errors were detected during model generation:
+
+NorthwestOrderSystem.DAL.TestSchedule: : EntityType 'TestSchedule' has no key defined. Define the key for this EntityType.
+TestSchedules: EntityType: EntitySet 'TestSchedules' is based on type 'TestSchedule' that has no keys defined.
+
+  Source=<Cannot evaluate the exception source>
+  StackTrace:
+<Cannot evaluate the exception stack trace>
+
+     */

@@ -100,6 +100,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Test_Results\TextFile1.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -136,6 +137,7 @@
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Protocol.cs" />
     <Compile Include="Models\SalesOrder.cs" />
+    <Compile Include="Models\TestSchedule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +167,7 @@
     <Content Include="Views\Protocols\Delete.cshtml" />
     <Content Include="Views\Protocols\Edit.cshtml" />
     <Content Include="Views\Protocols\Index.cshtml" />
+    <Content Include="Views\Employee\Schedule.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -174,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

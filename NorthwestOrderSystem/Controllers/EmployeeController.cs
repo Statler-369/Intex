@@ -55,7 +55,7 @@ namespace NorthwestOrderSystem.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AssayID,ShortDesc,Cost,BasePrice,DetailedDesc")] SalesOrder salesOrder)
+        public ActionResult Edit([Bind(Include = "OrderStatusID,CompanyID,OrderComments,Expedite,DiscountID,TotalPrice,QuotedPrice,OrderDueDate")] SalesOrder salesOrder)
         {
             if (ModelState.IsValid)
             {
@@ -66,5 +66,29 @@ namespace NorthwestOrderSystem.Controllers
             return View(salesOrder);
         }
         
+
+        public ActionResult Schedule()
+        {
+            List<OrderDetails> scheduledTests = db.Database.SqlQuery<OrderDetails>(
+                "SELECT * " +
+                "FROM OrderDetails " +
+                "WHERE (DAY(ScheduledTestDate) BETWEEN DAY(GETDATE()) AND DAY(GETDATE()) + 7) " +
+                "       AND(YEAR(ScheduledTestDate) = YEAR(GETDATE())) " +
+                "       AND (MONTH(ScheduledTestDate) = MONTH(GETDATE()))" +
+                "ORDER BY ScheduledTestDate").ToList();
+
+            List<TestSchedule> testSchedule = new List<TestSchedule>();
+
+            foreach(OrderDetails order in scheduledTests)
+            {
+                testSchedule.Add(new TestSchedule
+                {
+                    orderDetails = order,
+                    assay = db.Database.SqlQuery<Assay>("SELECT * FROM Assay WHERE AssayID =" + order.AssayID.ToString()).First()
+                });
+            }
+
+            return View(testSchedule);
+        }
     }
 }

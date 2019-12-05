@@ -28,6 +28,8 @@ namespace NorthwestOrderSystem.DAL
         public DbSet<OrderStatus> OrderStatuses { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Protocol> Protocols { get; set; }
-        public DbSet<SalesOrder> SalesOrders { get; set; }        
+        public DbSet<SalesOrder> SalesOrders { get; set; }
+
+        public System.Data.Entity.DbSet<NorthwestOrderSystem.Models.TestSchedule> TestSchedules { get; set; }
     }
 }
