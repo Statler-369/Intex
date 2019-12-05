@@ -35,13 +35,12 @@ namespace NorthwestOrderSystem.Controllers
         public ActionResult Login(string username, string password)
         {
             if(username == "Customer")
-            {
-                //return View("~/Views/Wherever/SomeDir/MyView.aspx"
+            {                
                 return RedirectToAction("Index", "Customer");
             }
             else if(username == "Employee")
             {
-                return View("/Views/Employee/Index.cshtml");
+                return RedirectToAction("Index", "Employee");
             }
             else
             {

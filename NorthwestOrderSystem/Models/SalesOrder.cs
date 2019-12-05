@@ -12,6 +12,7 @@ namespace NorthwestOrderSystem.Models
     {
         [Key]
         [Required]
+        [Display(Name ="Order ID")]
         public int OrderID { get; set; }
 
         [Display(Name ="Order Status")]

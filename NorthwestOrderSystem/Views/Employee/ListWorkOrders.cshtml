@@ -1,0 +1,61 @@
+﻿@model IEnumerable<NorthwestOrderSystem.Models.SalesOrder>
+
+@{
+    ViewBag.Title = "ListWorkOrders";
+}
+
+<h2>ListWorkOrders</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderComments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expedite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuotedPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDueDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderComments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Expedite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuotedPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderDueDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { orderID = item.OrderID })
+        </td>
+    </tr>
+}
+
+</table>
