@@ -11,93 +11,93 @@ using NorthwestOrderSystem.Models;
 
 namespace NorthwestOrderSystem.Controllers
 {
-    public class AssaysController : Controller
+    public class ProtocolsController : Controller
     {
         private IntexTestContext db = new IntexTestContext();
 
-        // GET: Assays
-        public ActionResult Index()
+        // GET: Protocols
+        public ActionResult Index(int assayID)
         {
-            return View(db.Assays.ToList());
+
+            return View(db.Database.SqlQuery<Protocol>("SELECT * FROM Protocol WHERE AssayID =" + assayID.ToString()).ToList());
         }
 
-
-        // GET: Assays/Create
+        // GET: Protocols/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Assays/Create
+        // POST: Protocols/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AssayID,ShortDesc,Cost,BasePrice,DetailedDesc")] Assay assay)
+        public ActionResult Create([Bind(Include = "AssayID,StepNumber,StepDesc")] Protocol protocol)
         {
             if (ModelState.IsValid)
             {
-                db.Assays.Add(assay);
+                db.Protocols.Add(protocol);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Assays");
             }
 
-            return View(assay);
+            return View(protocol);
         }
 
-        // GET: Assays/Edit/5
+        // GET: Protocols/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assay assay = db.Assays.Find(id);
-            if (assay == null)
+            Protocol protocol = db.Protocols.Find(id);
+            if (protocol == null)
             {
                 return HttpNotFound();
             }
-            return View(assay);
+            return View(protocol);
         }
 
-        // POST: Assays/Edit/5
+        // POST: Protocols/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AssayID,ShortDesc,Cost,BasePrice,DetailedDesc")] Assay assay)
+        public ActionResult Edit([Bind(Include = "AssayID,StepNumber,StepDesc")] Protocol protocol)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(assay).State = EntityState.Modified;
+                db.Entry(protocol).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(assay);
+            return View(protocol);
         }
 
-        // GET: Assays/Delete/5
+        // GET: Protocols/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assay assay = db.Assays.Find(id);
-            if (assay == null)
+            Protocol protocol = db.Protocols.Find(id);
+            if (protocol == null)
             {
                 return HttpNotFound();
             }
-            return View(assay);
+            return View(protocol);
         }
 
-        // POST: Assays/Delete/5
+        // POST: Protocols/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Assay assay = db.Assays.Find(id);
-            db.Assays.Remove(assay);
+            Protocol protocol = db.Protocols.Find(id);
+            db.Protocols.Remove(protocol);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

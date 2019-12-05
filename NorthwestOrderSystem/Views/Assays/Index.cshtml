@@ -32,17 +32,17 @@
             @Html.DisplayFor(modelItem => item.ShortDesc)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Cost)
+            $@Html.DisplayFor(modelItem => item.Cost)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.BasePrice)
+            $@Html.DisplayFor(modelItem => item.BasePrice)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DetailedDesc)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AssayID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AssayID }) |
+            @Html.ActionLink("Protocols", "Index", "Protocols", new { assayID=item.AssayID }, null) |
             @Html.ActionLink("Delete", "Delete", new { id=item.AssayID })
         </td>
     </tr>

@@ -116,6 +116,7 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProtocolsController.cs" />
     <Compile Include="DAL\IntexTest.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -151,7 +152,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Assays\Create.cshtml" />
     <Content Include="Views\Assays\Delete.cshtml" />
-    <Content Include="Views\Assays\Details.cshtml" />
     <Content Include="Views\Assays\Edit.cshtml" />
     <Content Include="Views\Assays\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
@@ -161,6 +161,10 @@
     <Content Include="Views\Employee\ListWorkOrders.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Protocols\Create.cshtml" />
+    <Content Include="Views\Protocols\Delete.cshtml" />
+    <Content Include="Views\Protocols\Edit.cshtml" />
+    <Content Include="Views\Protocols\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
