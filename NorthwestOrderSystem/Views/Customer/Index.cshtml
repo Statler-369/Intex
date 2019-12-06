@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<NorthwestOrderSystem.Models.OrderHistory>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Order History";
 }
 
-<h2>Index</h2>
+<h2>Order History</h2>
 
 <table class="table">
     <tr>
@@ -21,10 +21,10 @@
             @Html.DisplayNameFor(model => model.salesOrder.Expedite)
         </th>
         <th>
-            $@Html.DisplayNameFor(model => model.salesOrder.TotalPrice)
+            @Html.DisplayNameFor(model => model.salesOrder.TotalPrice)
         </th>
         <th>
-            $@Html.DisplayNameFor(model => model.salesOrder.QuotedPrice)
+            @Html.DisplayNameFor(model => model.salesOrder.QuotedPrice)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.salesOrder.OrderDueDate)
@@ -59,7 +59,6 @@
             @Html.DisplayFor(modelItem => item.salesOrder.OrderDueDate)
         </td>
         <td>
-
             <a href=@item.salesOrder.TestResults target="_blank">Results</a>
         </td>
         <td>

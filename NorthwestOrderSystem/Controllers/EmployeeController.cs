@@ -49,13 +49,13 @@ namespace NorthwestOrderSystem.Controllers
 
         public ActionResult Edit(int orderID)
         {
-            ViewBag.Statuses = db.OrderStatuses.ToList();
+            ViewBag.Statuses = db.Database.SqlQuery<OrderStatus>("SELECT * FROM OrderStatus").ToList();
             return View(db.SalesOrders.Find(orderID));
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "OrderStatusID,CompanyID,OrderComments,Expedite,DiscountID,TotalPrice,QuotedPrice,OrderDueDate")] SalesOrder salesOrder)
+        public ActionResult Edit([Bind(Include = "OrderStatusID,CompanyID,OrderComments,Expedite,TotalPrice,QuotedPrice,OrderDueDate")] SalesOrder salesOrder)
         {
             if (ModelState.IsValid)
             {

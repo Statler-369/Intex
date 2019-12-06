@@ -1,15 +1,21 @@
 ﻿@model IEnumerable<NorthwestOrderSystem.Models.Assay>
-
 @{
     ViewBag.Title = "About";
 }
-
-<h2>About</h2>
-
+<h2>About Northwest Labs</h2>
 <div class="jumbotron">
     <p>
-        This can contain some basic info about the company, as well as an explanation of the list below.
-        (The list below is a list of the tests we perform, as well as the base price for each)
+        Northwest Labs has been very successful and are known by many large corporations as leaders in pharmaceutical research and testing.
+        They aim to market to many different chemical and pharmaceutical companies needing analysis work done on any number of different compounds and drugs.
+        There are six common types of tests that are performed on about 70% of the compounds. These are:
+        <ul>
+            <li>Biochemical Pharmacology (BP)</li>
+            <li>DiscoveryScreen® (DS)</li>
+            <li>ImmunoScreen® (IS)</li>
+            <li>ProfilingScreen® (PF)</li>
+            <li>PharmaScreen® (PS)</li>
+            <li>CustomScreen™ (CS)</li>
+        </ul>
     </p>
 </div>
 <table class="table">
@@ -23,16 +29,15 @@
         <th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShortDesc)
-        </td>
-        <td>
-            $@Html.DisplayFor(modelItem => item.BasePrice)
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDesc)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.BasePrice)
+            </td>
+        </tr>
+    }
 </table>

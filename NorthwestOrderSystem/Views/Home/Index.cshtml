@@ -1,18 +1,20 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
+<h2>Northwest Labs Pharmaceutical</h2>
 <div class="jumbotron">
-    <p>
-        This will contain links to controllers. 
-        A login option
-        About option
-    </p>
-    <p>@Html.ActionLink("Login link", "Login", "Home")</p>
+    <div class="row">
+        <div class="col-lg-6">
+            <ul class="text-muted largefont">
+                <li>Northwest Labs Pharmaceutical provides chemical and compound tests for companies needing in-depth assay analysis.</li>
+                <li>An assay analysis is a set of physical, chemical, atomic, and biological tests that are conducted on a chemical compound or drug to determine its characteristics.</li>
+                <li>Northwest Labs is a global business with pharmaceutical labs in Singapore and corporate offices located in Seattle.</li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <img src="~/Content/images/labPhoto.jpg" class="rounded-corners homepage" />
+        </div>
+    </div>
 </div>
-
-
-
+<br />
+<p>Customer | Employee @Html.ActionLink("Login", "Login", "Home")</p>
