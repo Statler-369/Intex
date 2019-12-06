@@ -16,7 +16,7 @@ namespace NorthwestOrderSystem.Models
 
         [Required(ErrorMessage ="A short description (100 characters) is required")]
         [StringLength(100, ErrorMessage ="Keep this within 100 characters")]
-        [Display(Name ="Short Description")]
+        [Display(Name ="Assay Name")]
         public string ShortDesc { get; set; }
 
         [Required(ErrorMessage = "Estimated Assay Cost is required")]        

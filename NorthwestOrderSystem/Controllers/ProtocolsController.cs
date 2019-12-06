@@ -13,6 +13,8 @@ namespace NorthwestOrderSystem.Controllers
 {
     public class ProtocolsController : Controller
     {
+
+        //This protocols controller provides the capability to add, edit, or delete the protocols for each assay.
         private IntexTestContext db = new IntexTestContext();
 
         // GET: Protocols

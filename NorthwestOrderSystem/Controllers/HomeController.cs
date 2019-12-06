@@ -33,7 +33,7 @@ using System.Web.Mvc;
  * An additional purpose for this system is to facilitate communication between the Singapore and Seattle offices.
  * 
  * This prototype, while not yet fully functional, demonstrates the ability of this team to provide the full system.
- * December 12, 2019
+ * December 6, 2019
 */
 
 namespace NorthwestOrderSystem.Controllers
@@ -101,13 +101,18 @@ namespace NorthwestOrderSystem.Controllers
         public ActionResult About()
         {
             /*
-             * 
+             * This web page provides a more detailed look at the activities of the firm.
+             * Some of the Assay details from the database are put into a list for general view.
              * */
             return View(db.Assays);
         }
 
         public ActionResult Contact()
         {
+            /*
+             * The Contact Page provides new customers to input their information to get in touch with a sales rep.
+             * Other than that, the Contact page also provides Northwest Labs' contact information and hours of operation.
+             * */
             return View();
         }
 
@@ -115,6 +120,9 @@ namespace NorthwestOrderSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "CompanyID,CompanyPassword,CompanyName,CompanyAddress,CompanyZip,CompanyCity,CompanyState,CompanyCountry")] Company company)
         {
+            /*
+             * This method records the new company in the database.
+             * */
             if (ModelState.IsValid)
             {
                 db.Companies.Add(company);

@@ -15,6 +15,12 @@ namespace NorthwestOrderSystem.Controllers
     {
         private IntexTestContext db = new IntexTestContext();
 
+        /*
+         * This controller adds the capability to add, edit, and delete assays from the database.
+         * The details method will take the user to a list of the protocols included in the assay.
+         * The protocols controller provides the capability to add, edit, or delete the protocols for each assay.
+         */ 
+
         // GET: Assays
         public ActionResult Index()
         {

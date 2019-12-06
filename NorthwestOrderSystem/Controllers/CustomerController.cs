@@ -15,8 +15,11 @@ namespace NorthwestOrderSystem.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            //This view will show them their order history
-            //We also want to show the order status
+            /*
+             * This view will show them their order history and status
+             * This view also connects them to the test results, viewed electronically.
+             * */
+            
             List<SalesOrder> salesOrderList = db.SalesOrders.ToList();
             List<OrderHistory> orderHistoryList = new List<OrderHistory>();
 
@@ -35,6 +38,7 @@ namespace NorthwestOrderSystem.Controllers
 
         public ActionResult Details(int orderID)
         {
+            //The resulting view will list out the order details for the chosen order. 
             orderID.ToString();
             List<OrderDetails> orderDetailsList = db.Database.SqlQuery<OrderDetails>("SELECT * FROM OrderDetails WHERE OrderID =" + orderID ).ToList();
             
@@ -42,17 +46,3 @@ namespace NorthwestOrderSystem.Controllers
         }
     }
 }
-
-/*
- System.Data.Entity.ModelConfiguration.ModelValidationException
-  HResult=0x80131500
-  Message=One or more validation errors were detected during model generation:
-
-NorthwestOrderSystem.DAL.TestSchedule: : EntityType 'TestSchedule' has no key defined. Define the key for this EntityType.
-TestSchedules: EntityType: EntitySet 'TestSchedules' is based on type 'TestSchedule' that has no keys defined.
-
-  Source=<Cannot evaluate the exception source>
-  StackTrace:
-<Cannot evaluate the exception stack trace>
-
-     */
